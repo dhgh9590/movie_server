@@ -18,3 +18,12 @@ MongoClient.connect(
     });
   }
 );
+
+//영화 목록 데이터 가지고 오기
+app.get("/list", function (req, res) {
+  db.collection("movieList")
+    .find()
+    .toArray(function (에러, 결과) {
+      res.json({ movie: 결과 });
+    });
+});
