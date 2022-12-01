@@ -27,3 +27,35 @@ app.get("/list", function (req, res) {
       res.json({ movie: 결과 });
     });
 });
+
+//평점 수정
+app.put("/edit", function (req, res) {
+  db.collection("movieList").updateOne(
+    { id: req.body.id },
+    { $set: { grade: req.body.grade, grade_user: req.body.grade_user } },
+    function (에러, 결과) {}
+  );
+});
+
+//검색 기능
+app.post("/search", function (req, res) {
+  console.log(req.body.search);
+  const 검색조건 = [
+    {
+      $search: {
+        index: "movieTitleSearch", //db search에서 만든 이름
+        text: {
+          query: req.body.search,
+          path: "title", //검색할 목록의 이름
+        },
+      },
+    },
+    { $sort: { id: 1 } },
+  ];
+  db.collection("movieList")
+    .aggregate(검색조건)
+    .toArray((에러, 결과) => {
+      console.log(결과);
+      res.json({ searchItem: 결과 });
+    });
+});
