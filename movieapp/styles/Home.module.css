@@ -1,0 +1,13 @@
+.main{width: 100%;min-height: 100vh; height: 100%; background: #161616; padding: 20px 20px 20px 120px; box-sizing: border-box; overflow: hidden;}
+
+.banner{max-width: 1780px;height: 100%;}
+
+@media (max-width:767px){
+    .main{padding-left: 80px;}
+}
+
+@media (max-width:400px){
+    .main{padding-left: 70px; padding-right: 10px;}
+}
+
+

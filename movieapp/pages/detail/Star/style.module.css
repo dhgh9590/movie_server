@@ -1,0 +1,13 @@
+.star_wrap{text-align: center;}
+.star_wrap em{font-size: 16px;color: #fff;}
+.star_wrap .star{margin: 10px 0;}
+.star_wrap .star_icon{font-size: 20px;color: #fff; cursor: pointer;}
+.star_wrap .star_icon.active{color: yellow;}
+.star_wrap .btn{}
+.star_wrap .btn button{padding: 7px 20px; border: none; background: rgba(255, 255, 255, 1); border-radius: 5px; cursor: pointer;}
+
+.end{}
+.end em{font-size: 14px;}
+
+.member{margin-top: 10px; font-size: 16px;}
+.member em{ font-size: 20px; margin-right: 10px;}
